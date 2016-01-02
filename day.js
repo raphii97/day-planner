@@ -1,4 +1,6 @@
-//plan storage
+/*
+	Customization variables
+*/
 var plan = [
 	{tag: "sleep", start: 0, duration: 8},
 	{tag: "eat", start: 8, duration: 1},
@@ -21,12 +23,16 @@ var color = {
 	"sleep": "#222"
 };
 
-//canvas
+/*
+	CANVAS
+*/
 var c = document.getElementById("c");
 var $ = c.getContext("2d");
 var h, w;
 
-//circle object
+/*
+	CIRCLE object
+*/
 var circle = {
 	unit: 2 * Math.PI / 24
 };
@@ -73,7 +79,9 @@ circle.draw = function(){
 	$.fill();
 };
 
-//time indicator
+/*
+	TIME INDICATOR
+*/
 function timer(){
 	var d = new Date();
 	var rad = (d.getHours() + d.getMinutes() / 60) * circle.unit;
@@ -86,7 +94,9 @@ function timer(){
 	$.fill();
 }
 
-//sidebar	todo minimize repetition
+/*
+	SIDEBAR	todo cleanup
+*/
 function sidebar(){
 	var all = 0;
 	for(var i in color){
@@ -130,10 +140,13 @@ function sidebar(){
 
 	document.getElementById('sidebar').appendChild(el);
 }
-sidebar();
 
-//event listener
+/*
+	INIT
+*/
+//resize event listener
 window.addEventListener("resize", circle.init);
 
-//init
+//start the engines
 circle.init();
+sidebar();
