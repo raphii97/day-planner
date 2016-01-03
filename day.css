@@ -35,3 +35,13 @@ body{
 	width: 2vmin;
 	height: 2vmin;
 }
+
+a{
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	color: #bdc3c7;
+}
