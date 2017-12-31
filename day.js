@@ -2,24 +2,26 @@
 	Customization variables
 */
 var plan = [
-	{tag: "sleep", start: 0, duration: 8},
-	{tag: "eat", start: 8, duration: 1},
-	{tag: "study", start: 9, duration: 1},
-	{tag: "work", start: 10, duration: 1},
-	{tag: "fitness", start: 11, duration: 2},
-	{tag: "eat", start: 13, duration: 1},
-	{tag: "work", start: 14, duration: 3},
-	{tag: "study", start: 17, duration: 2},
-	{tag: "eat", start: 19, duration: 1},
-	{tag: "movie", start: 20, duration: 2}
+	{tag: "sleep", start: 10, duration: 7.5},
+	{tag: "wake", start: 5.5, duration: .5},
+	{tag: "food", start: 6, duration: 1},
+	{tag: "philosophy", start: 7, duration: 3},
+	{tag: "conditioning", start: 10, duration: 2},
+	{tag: "food", start: 12, duration: 1},
+	{tag: "meditate", start: 13, duration: 1},
+	{tag: "philosophy", start: 14, duration: 2},
+	{tag: "conditioning", start: 16, duration: 2},
+	{tag: "food", start: 18, duration: 1},
+	{tag: "philosophy", start: 19, duration: 1},
+	{tag: "meditate", start: 20, duration: 2}
 ];
 
 var color = {
-	"eat": "#f1c40f",
-	"work": "#1abc9c",
-	"fitness": "#e74c3c",
-	"study": "#3498db",
-	"movie": "#34495e",
+	"food": "#f1c40f",
+	"philosophy": "#1abc9c",
+	"conditioning": "#e74c3c",
+	"meditate": "#3498db",
+	"wake": "#34495e",
 	"sleep": "#222"
 };
 
