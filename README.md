@@ -7,7 +7,7 @@ Visually minimal app to plan your daily routine:
 
 
 ## Usage
-Customize your routine changing the `plan` and `color` variables
+Customize your routine by changing the `plan` and `color` variables
 ```js
 //start and duration are in hours
 var plan = [
