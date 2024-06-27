@@ -3,7 +3,7 @@ Visually minimal app to plan your daily routine:
 [App in action](http://raphii97.github.io/day-planner)
 
 ## Example
-![Example](https://github.com/raphii97/day-planner/blob/master/example.png "Wubba Lubba Dub Dub")
+![Example](resources/example.png "Routine Circle")
 
 
 ## Usage
