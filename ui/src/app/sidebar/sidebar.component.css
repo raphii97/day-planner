@@ -1,0 +1,23 @@
+#sidebar {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  padding: 0 100px;
+}
+
+#sidebar > div {
+  padding: 10px 0;
+}
+
+#sidebar > div > * {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+#sidebar > div > div {
+  width: 2vmin;
+  height: 2vmin;
+}

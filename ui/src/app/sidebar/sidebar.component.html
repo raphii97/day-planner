@@ -1,0 +1,5 @@
+<div id="sidebar">
+  <div *ngFor="let tag of tags">
+    <app-tag [name]="tag.name" [start]="tag.start" [duration]="tag.duration" [color]="tag.color"></app-tag>
+  </div>
+</div>
