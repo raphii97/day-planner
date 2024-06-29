@@ -3,6 +3,13 @@ import { RouterOutlet } from '@angular/router';
 import {SidebarComponent} from "./sidebar/sidebar.component";
 import {CanvasComponent} from "./canvas/canvas.component";
 
+interface Tag{
+  name:string;
+  start:number;
+  duration:number;
+  color:string;
+}
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -12,4 +19,10 @@ import {CanvasComponent} from "./canvas/canvas.component";
 })
 export class AppComponent {
   title = 'ui';
+
+  data:Tag[]=[];
+
+  onDataChange(tags:Tag[]):void{
+    this.data=tags.slice();
+  }
 }

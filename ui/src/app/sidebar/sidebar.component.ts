@@ -1,6 +1,13 @@
-import { Component } from '@angular/core';
+import {Component, OnInit, EventEmitter, Output} from '@angular/core';
 import {TagComponent} from "../tag/tag.component";
 import {NgForOf} from "@angular/common";
+
+interface Tag{
+  name:string;
+  start:number;
+  duration:number;
+  color:string;
+}
 
 @Component({
   selector: 'app-sidebar',
@@ -9,16 +16,43 @@ import {NgForOf} from "@angular/common";
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
 })
-export class SidebarComponent {
-  tags: Tag[] = [
-    { name: 'sleep', start: 22, duration: 6, color: 'blue' },
-    { name: 'work', start: 12, duration: 18, color: 'green' }
-  ];
-}
+export class SidebarComponent implements OnInit {
+  @Output() tagsChange = new EventEmitter<Tag[]>();
 
-interface Tag {
-  name: string;
-  start: number;
-  duration: number;
-  color?: string;
+  tags: Tag[] = [
+    {name:'sleep',start:22,duration:8,color:'#222'},
+    {name:'work',start:12,duration:4,color:'#f00'},
+  ];
+
+  ngOnInit() {
+    this.emitTags();
+  }
+
+  emitTags() {
+    this.tagsChange.emit(this.tags);
+  }
+
+  editTag(index:number){
+    const newName=prompt('Enter new name',this.tags[index].name);
+    const newStart=prompt('Enter new start time',this.tags[index].start.toString());
+    const newDuration=prompt('Enter new duration',this.tags[index].duration.toString());
+    const newColor=prompt('Enter new color',this.tags[index].color);
+
+    if(newName && newStart && newDuration && newColor){
+      this.tags[index]={
+        name:newName,
+        start:+newStart,
+        duration:+newDuration,
+        color:newColor
+      };
+
+      this.emitTags();
+    }
+  }
+
+  deleteTag(index:number){
+    this.tags.splice(index,1);
+    this.emitTags();
+  }
+
 }
