@@ -55,4 +55,21 @@ export class SidebarComponent implements OnInit {
     this.emitTags();
   }
 
+  addTag() {
+    const newName=prompt('Enter tag name');
+    const newStart=prompt('Enter start time');
+    const newDuration=prompt('Enter duration');
+    const newColor=prompt('Enter color');
+
+    if (newName && newStart && newDuration && newColor){
+      this.tags.push({
+        name:newName,
+        start:+newStart,
+        duration:+newDuration,
+        color:newColor
+      });
+    }
+
+    this.emitTags();
+  }
 }
