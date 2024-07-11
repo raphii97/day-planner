@@ -1,7 +1,7 @@
-<div [style.background]="color">
+<div [style.border-color]="color">
   <span>{{name}}</span>
   <span>{{start}}</span>
   <span>{{duration}}</span>
-  <span>edit</span>
-  <span>delete</span>
+  <span (click)="onEdit()"><button>edit</button></span>
+  <span (click)="onDelete()"><button>delete</button></span>
 </div>

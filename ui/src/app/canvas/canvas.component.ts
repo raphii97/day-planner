@@ -1,4 +1,11 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Input, OnChanges, ViewChild} from '@angular/core';
+
+interface Tag{
+  name:string;
+  start:number;
+  duration:number;
+  color:string;
+}
 
 @Component({
   selector: 'app-canvas',
@@ -6,16 +13,11 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
   standalone: true,
   styleUrls: ['./canvas.component.css']
 })
-export class CanvasComponent implements AfterViewInit {
+export class CanvasComponent implements AfterViewInit, OnChanges {
   @ViewChild('canvas', { static: true }) canvasRef!: ElementRef<HTMLCanvasElement>;
-  private ctx!: CanvasRenderingContext2D;
+  @Input() plan: Tag[] = [];
 
-  //merge with sidebar.component.ts tags
-  //and update when sidebar.component.ts tags change
-  private plan = [
-    { tag: 'sleep', start: 22, duration: 8, color: '#222' },
-    { tag: 'work', start: 12, duration: 4, color: '#f00' },
-  ];
+  private ctx!: CanvasRenderingContext2D;
 
   private circle: any = {
     unit: (2 * Math.PI) / 24
@@ -25,6 +27,10 @@ export class CanvasComponent implements AfterViewInit {
     this.ctx = this.canvasRef.nativeElement.getContext('2d')!;
     this.circleInit();
     window.addEventListener('resize', () => this.circleInit());
+  }
+
+  ngOnChanges(): void {
+    this.drawCircle();
   }
 
   private circleInit(): void {

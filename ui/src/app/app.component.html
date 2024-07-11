@@ -1,2 +1,2 @@
-<app-sidebar></app-sidebar>
-<app-canvas></app-canvas>
+<app-sidebar (tagsChange)="onDataChange($event)"></app-sidebar>
+<app-canvas [plan]="data"></app-canvas>
