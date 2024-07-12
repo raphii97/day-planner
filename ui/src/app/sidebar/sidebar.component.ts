@@ -20,8 +20,11 @@ export class SidebarComponent implements OnInit {
   @Output() tagsChange = new EventEmitter<Tag[]>();
 
   tags: Tag[] = [
-    {name:'sleep',start:22,duration:8,color:'#222'},
-    {name:'work',start:12,duration:4,color:'#f00'},
+    {name:'sleep',start:23,duration:8,color:'pink'},
+    {name:'work',start:9,duration:8,color:'violet'},
+    {name:'lunch',start:12,duration:1,color:'yellow'},
+    {name:'freetime',start:17,duration:6,color:'#add8e6'},
+    {name:'workout',start:7,duration:2,color:'#55efc4'}
   ];
 
   ngOnInit() {

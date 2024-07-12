@@ -43,7 +43,6 @@ export class CanvasComponent implements AfterViewInit, OnChanges {
     this.circle.radius = Math.min(h, w) / 3;
 
     this.drawCircle();
-    this.timer();
   }
 
   private drawCircle(): void {
@@ -77,6 +76,9 @@ export class CanvasComponent implements AfterViewInit, OnChanges {
 
     ctx.fillStyle = '#fff'; // bg color
     ctx.fill();
+
+    //timer
+    this.timer()
   }
 
   private timer(): void {
